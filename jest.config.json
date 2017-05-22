@@ -1,0 +1,10 @@
+{
+  "transform": {
+    ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+  },
+  "testRegex": ".*.spec.ts$",
+  "moduleFileExtensions": [
+    "ts",
+    "tsx"
+  ]
+}
