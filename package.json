@@ -1,6 +1,16 @@
 {
-  "name": "redux-ex",
-  "private": true,
+  "name": "react-redux-ts-starter-kit",
+  "version": "1.0.0",
+  "description": "starter kit which based on rollup/es6/typescript/react/redux/scss",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:AndreyUtka/react-redux-ts-starter-kit.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AndreyUtka/react-redux-ts-starter-kit/issues"
+  },
+  "homepage": "https://github.com/AndreyUtka/react-redux-ts-starter-kit/#readme",
   "scripts": {
     "clean": "rimraf ./dist",
     "start": "npm run clean && BUILD_TYPE='start' npm run notify && npm run build:dev && npm run dev:watch",
