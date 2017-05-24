@@ -1,7 +1,8 @@
 const bs = require("browser-sync").create();
+const buildConstants = require("../build-process/build-constants");
 
-bs.watch("./dist/build/*").on("change", bs.reload);
+bs.watch(`${buildConstants.out}/*`).on("change", bs.reload);
 
 bs.init({
-    server: "./dist/build"
+    server: `${buildConstants.out}`
 });
