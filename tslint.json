@@ -15,8 +15,8 @@
         "named": "never",
         "asyncArrow": "always"
       }
-    ]
+    ],
+    "ordered-imports": false
   },
-  "ordered-imports": false,
   "rulesDirectory": []
 }
