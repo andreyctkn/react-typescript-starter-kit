@@ -5,12 +5,14 @@ const resolve = require('rollup-plugin-node-resolve');
 const buildConstants = require("./build-constants");
 
 export default {
-    entry: `${buildConstants.tmpOut}/index.js`,
-    dest: `${buildConstants.out}/bundle.js`,
-    format: "iife",
-    sourceMap: true,
+    input: `${buildConstants.tmpOut}/index.js`,
+    sourcemap: true,
     globals: config.globals,
     external: config.external,
+    output: {
+        file: `${buildConstants.out}/bundle.js`,
+        format: "iife",
+    },
     plugins: [
         replace({
             "process.env.NODE_ENV": JSON.stringify("development")
