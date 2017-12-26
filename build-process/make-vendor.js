@@ -1,13 +1,12 @@
-const concat = require("concat");
-const chalk = require("chalk");
-const libsConfig = require("./libs");
-const buildConstants = require("./build-constants");
+const libsConfig = require('./libs');
+const buildConstants = require('./build-constants');
+const { execCommand, logInfo } = require('./helpers/bash');
 const { BUILD_TYPE } = process.env;
 
-console.log(`${chalk.cyan("concatenating libs to vendor.js")}`);
+logInfo('concatenating libs to vendor.js');
 
-const vendorLibs = Object
-    .keys(libsConfig)
-    .map(lib => BUILD_TYPE === "production" ? libsConfig[lib].path : libsConfig[lib].minPath);
+const vendorLibs = Object.keys(libsConfig)
+	.map(lib => BUILD_TYPE === 'production' ? libsConfig[lib].dev : libsConfig[lib].prod)
+	.join(' ');
 
-concat(vendorLibs, `${buildConstants.out}/vendor.js`);
+execCommand('cat', vendorLibs, '>', `${buildConstants.out}/vendor.js`);

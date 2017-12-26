@@ -1,7 +1,6 @@
 {
   "extends": [
-    "tslint:latest",
-    "tslint-react"
+    "tslint:latest"
   ],
   "jsRules": {},
   "rules": {
@@ -15,8 +14,7 @@
         "named": "never",
         "asyncArrow": "always"
       }
-    ],
-    "ordered-imports": false
+    ]
   },
   "rulesDirectory": []
 }
