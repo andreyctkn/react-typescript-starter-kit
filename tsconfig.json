@@ -1,38 +1,43 @@
 {
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "alwaysStrict": true,
-    "emitBOM": true,
-    "experimentalDecorators": true,
-    "forceConsistentCasingInFileNames": true,
-    "importHelpers": true,
-    "inlineSourceMap": true,
-    "jsx": "react",
-    "lib": [
-      "es2015.collection",
-      "dom",
-      "es5"
-    ],
-    "module": "es2015",
-    "moduleResolution": "node",
-    "noEmitHelpers": true,
-    "noEmitOnError": true,
-    "noImplicitAny": true,
-    "noImplicitReturns": true,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "outDir": "dist/_tmp/",
-    "pretty": true,
-    "removeComments": true,
-    "target": "es5"
-  },
-  "include": [
-    "src/**/*",
-    "typings"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+	"compilerOptions": {
+		"plugins": [
+			{
+				"name": "typescript-styled-plugin"
+			}
+		],
+		"allowSyntheticDefaultImports": true,
+		"alwaysStrict": true,
+		"emitBOM": true,
+		"experimentalDecorators": true,
+		"forceConsistentCasingInFileNames": true,
+		"importHelpers": true,
+		"inlineSourceMap": true,
+		"jsx": "react",
+		"lib": [
+			"es2015.collection",
+			"dom",
+			"es5"
+		],
+		"module": "es2015",
+		"moduleResolution": "node",
+		"noEmitHelpers": true,
+		"noEmitOnError": true,
+		"noImplicitAny": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"outDir": "dist/_tmp/",
+		"pretty": true,
+		"removeComments": true,
+		"target": "es5"
+	},
+	"include": [
+		"src/**/*",
+		"typings"
+	],
+	"exclude": [
+		"node_modules",
+		"dist"
+	]
 }

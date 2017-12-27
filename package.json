@@ -40,12 +40,14 @@
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "rollup": "0.53.0",
+    "styled-components": "2.4.0",
     "tslib": "1.8.1",
     "typescript": "2.6.2"
   },
   "devDependencies": {
     "jest": "22.0.4",
     "prettier": "1.9.2",
-    "ts-jest": "22.0.0"
+    "ts-jest": "22.0.0",
+    "typescript-styled-plugin": "0.2.2"
   }
 }
