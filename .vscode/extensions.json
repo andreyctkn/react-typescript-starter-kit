@@ -1,0 +1,9 @@
+{
+	"recommendations": [
+		"EditorConfig.editorconfig",
+		"samverschueren.final-newline",
+		"esbenp.prettier-vscode",
+		"eg2.tslint",
+		"jpoissonnier.vscode-styled-components"
+	]
+}
