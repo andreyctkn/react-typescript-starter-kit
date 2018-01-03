@@ -7,6 +7,6 @@ const buildConstants = require("./build-constants");
 const compiledFunction = pug.compileFile("src/index.pug", null);
 const html = compiledFunction({});
 
-fs.writeFile(path.resolve(`${buildConstants.out}/index.html`), html, function (err) {
+fs.writeFile(path.resolve(`${buildConstants.out}/index.html`), html, function(err) {
     if (err) throw err;
 });

@@ -1,7 +1,5 @@
 {
-  "extends": [
-    "tslint:latest"
-  ],
+  "extends": ["tslint:latest"],
   "jsRules": {},
   "rules": {
     "no-namespace": false,

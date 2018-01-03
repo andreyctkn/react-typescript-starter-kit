@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-const Button = styled.a`
-    display: inline-block;
+const Button = styled.button`
+    font-size: 1em;
+    margin: 1em;
+    padding: 0.25em 1em;
+    border: 2px solid palevioletred;
     border-radius: 3px;
-    padding: 0.5rem 0;
-    margin: 0.5rem 1rem;
-    width: 11rem;
-    background: transparent;
-    color: white;
-    border: 2px solid white;
+
+    &:hover {
+        display: flex;
+    }
 `;
 
 export default class App extends Component<any, any> {

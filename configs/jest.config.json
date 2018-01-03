@@ -3,12 +3,7 @@
     ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
   },
   "collectCoverage": false,
-  "collectCoverageFrom": [
-    "src/**/*.{ts,tsx}"
-  ],
+  "collectCoverageFrom": ["src/**/*.{ts,tsx}"],
   "testRegex": "src/.*.spec.(ts|tsx)$",
-  "moduleFileExtensions": [
-    "ts",
-    "tsx"
-  ]
+  "moduleFileExtensions": ["ts", "tsx"]
 }

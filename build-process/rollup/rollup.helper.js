@@ -10,5 +10,5 @@ const globals = Object.keys(vendorLibs).reduce((libAliases, lib) => {
 
 module.exports = {
     globals: globals,
-    external: externals
+    external: externals,
 };
