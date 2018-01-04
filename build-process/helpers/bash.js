@@ -8,6 +8,10 @@ function logInfo(info) {
     console.log(chalk`{cyan ${info}} \n`);
 }
 
+function logBuildStep(buldStep, message) {
+    console.log(`Current build step: ${chalk.red(buldStep)}\n${chalk.cyan(`This step provides ${message}`)}`);
+}
+
 async function execCommand(...options) {
     try {
         const { stdout, stderr } = await promisedExec(options.join(" "));
@@ -22,4 +26,4 @@ async function execCommand(...options) {
     }
 }
 
-module.exports = { execCommand, logInfo };
+module.exports = { execCommand, logInfo, logBuildStep };

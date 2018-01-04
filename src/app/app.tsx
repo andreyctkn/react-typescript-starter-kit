@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
+namespace test {
+}
+
 const Button = styled.button`
     font-size: 1em;
     margin: 1em;

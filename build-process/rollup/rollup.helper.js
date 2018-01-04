@@ -8,7 +8,4 @@ const globals = Object.keys(vendorLibs).reduce((libAliases, lib) => {
     return libAliases;
 }, {});
 
-module.exports = {
-    globals: globals,
-    external: externals,
-};
+module.exports = { globals, external };

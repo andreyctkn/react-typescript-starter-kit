@@ -1,10 +1,5 @@
 {
   "compilerOptions": {
-    "plugins": [
-      {
-        "name": "typescript-styled-plugin"
-      }
-    ],
     "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,
     "emitBOM": true,
@@ -27,17 +22,21 @@
     "noImplicitThis": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "outDir": "dist/_tmp/",
+    "outDir": "./dist/_tmp/",
+    "plugins": [
+      {
+        "name": "typescript-styled-plugin"
+      }
+    ],
     "pretty": true,
     "removeComments": true,
     "target": "es5"
   },
   "include": [
-    "src/**/*",
-    "typings"
+    "src/**/*.{ts,tsx}"
   ],
   "exclude": [
-    "node_modules",
-    "dist"
+    "./node_modules",
+    "./dist"
   ]
 }

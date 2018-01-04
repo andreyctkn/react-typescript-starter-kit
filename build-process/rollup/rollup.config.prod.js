@@ -1,4 +1,4 @@
-const replace = require("rollup-plugin-replace");
+const replace = require("");
 const sourcemaps = require("rollup-plugin-sourcemaps");
 const config = require("./rollup.helper");
 const resolve = require("rollup-plugin-node-resolve");
