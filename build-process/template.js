@@ -1,6 +1,6 @@
 const { compile } = require("handlebars");
-const { readFileAsync, writeFileAsync, logInfo, getLastCommitHash } = require("./helpers/node");
-const { DIRS } = require("./buildConstants");
+const { readFileAsync, writeFileAsync, logInfo, getLastCommitHash } = require("./helpers/commands");
+const { DIRS } = require("./constants");
 
 readFileAsync("src/index.hbs")
     .then(data => {

@@ -1,5 +1,5 @@
-const { execAsync } = require("./node");
-const { UI_PORT } = require("../buildConstants");
+const { execAsync } = require("./commands");
+const { UI_PORT } = require("../constants");
 
 setTimeout(function() {
     const url = `http://localhost:${UI_PORT}`;

@@ -1,6 +1,6 @@
 const express = require("express");
 const { init } = require("browser-sync").create();
-const { DIRS, SERVER_PORT, UI_PORT } = require("../build-process/buildConstants");
+const { DIRS, SERVER_PORT, UI_PORT } = require("../build-process/constants");
 
 const app = express();
 
