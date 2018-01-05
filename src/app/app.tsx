@@ -1,9 +1,6 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-namespace test {
-}
-
 const Button = styled.button`
     font-size: 1em;
     margin: 1em;
@@ -19,9 +16,5 @@ const Button = styled.button`
 export default class App extends Component<any, any> {
     public render() {
         return <Button> Hello</Button>;
-    }
-
-    private you() {
-        const u = 8;
     }
 }

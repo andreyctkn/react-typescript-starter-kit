@@ -33,7 +33,8 @@
     "target": "es5"
   },
   "include": [
-    "src/**/*.{ts,tsx}"
+    "src/**/*.ts",
+    "src/**/*.tsx"
   ],
   "exclude": [
     "./node_modules",

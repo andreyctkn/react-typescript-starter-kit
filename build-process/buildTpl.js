@@ -1,12 +1,12 @@
-const pug = require("pug");
-const fs = require("fs");
-const path = require("path");
-const buildConstants = require("./build-constants");
+const { compile } = require("handlebars");
+const { readFileAsync, writeFileAsync, logInfo, getLastCommitHash } = require("./helpers/node");
+const { DIRS } = require("./buildConstants");
 
-// Compile the source code
-const compiledFunction = pug.compileFile("src/index.pug", null);
-const html = compiledFunction({});
-
-fs.writeFile(path.resolve(`${buildConstants.out}/index.html`), html, function(err) {
-    if (err) throw err;
-});
+readFileAsync("src/index.hbs")
+    .then(data => {
+        const template = compile(data);
+        const version = getLastCommitHash();
+        return template({ version });
+    })
+    .then((html) => writeFileAsync(`${DIRS.output}/index.html`, html))
+    .then(() => logInfo("template was built"));

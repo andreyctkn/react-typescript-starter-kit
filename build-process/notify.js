@@ -1,4 +1,4 @@
-const { logBuildStep } = require("./helpers/bash");
+const { logBuildStep } = require("./helpers/node");
 const { BUILD_TYPES } = require("./buildConstants");
 const { BUILD_TYPE } = process.env;
 
