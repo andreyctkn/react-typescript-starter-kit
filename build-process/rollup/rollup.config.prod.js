@@ -2,20 +2,21 @@ const replace = require("");
 const sourcemaps = require("rollup-plugin-sourcemaps");
 const config = require("./rollup.helper");
 const resolve = require("rollup-plugin-node-resolve");
-const buildConstants = require("./build-constants");
+const { getLastCommitHash } = require("../helpers/commands");
+const { DIRS } = require("../constants");
 
 export default {
-    input: `${buildConstants.tmpOut}/index.js`,
+    input: `${DIRS.tmp}/index.js`,
     sourcemap: true,
     globals: config.globals,
     external: config.external,
     output: {
-        file: `${buildConstants.out}/bundle.js`,
+        file: `${DIRS.output}/bundle.${getLastCommitHash()}.js`,
         format: "iife",
     },
     plugins: [
         replace({
-            "process.env.NODE_ENV": JSON.stringify("development"),
+            "process.env.NODE_ENV": JSON.stringify("production"),
         }),
         resolve({ jsnext: true, modulesOnly: true }),
         sourcemaps(),

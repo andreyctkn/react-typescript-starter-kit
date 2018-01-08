@@ -12,4 +12,6 @@ const BUILD_TYPES = {
 const SERVER_PORT = process.env.PORT || 3000;
 const UI_PORT = SERVER_PORT + 80;
 
-module.exports = { DIRS, BUILD_TYPES, SERVER_PORT, UI_PORT };
+const isProduction = () => BUILD_TYPE === BUILD_TYPES.prod;
+
+module.exports = { DIRS, BUILD_TYPES, SERVER_PORT, UI_PORT, isProduction };

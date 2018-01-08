@@ -1,9 +1,9 @@
-const vendorLibs = require("./libs");
+const vendorLibs = require("../libs");
 
-const externals = [];
+const external = [];
 
 const globals = Object.keys(vendorLibs).reduce((libAliases, lib) => {
-    externals.push(vendorLibs[lib].importName);
+    external.push(vendorLibs[lib].importName);
     libAliases[vendorLibs[lib].importName] = vendorLibs[lib].globalAlias;
     return libAliases;
 }, {});

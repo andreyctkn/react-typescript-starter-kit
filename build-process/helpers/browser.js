@@ -1,7 +1,8 @@
-const { execAsync } = require("./commands");
+const { execAsync, logError } = require("./commands");
 const { UI_PORT } = require("../constants");
 
-setTimeout(function() {
-    const url = `http://localhost:${UI_PORT}`;
-    execAsync(`open ${url}`).catch(error => `Failed to open browser. with error ${error}`);
+setTimeout(() => {
+    execAsync(`open http://localhost:${UI_PORT}`).catch(error =>
+        logError(`Failed to open browser with error:\n${error}`)
+    );
 }, 3000);
