@@ -9,7 +9,7 @@ cache:
     - node_modules
 script:
   - yarn
-	- yarn build:prod
+	- yarn build-prod
 	- yarn test
 notifications:
   on_failure: change # always|never
