@@ -1,19 +1,17 @@
-const path = require("path");
-
-const npm = "node_modules";
-
 const vendorLibs = {
     react: {
         importName: "react",
         globalAlias: "React",
-        dev: `${npm}/react/umd/react.development.js`,
-        prod: `${npm}/react/umd/react.production.min.js`,
+        nodeModulesPath: "react/umd",
+        dev: "react.development.js",
+        prod: "react.production.min.js",
     },
     reactDom: {
         importName: "react-dom",
         globalAlias: "ReactDOM",
-        dev: `${npm}/react-dom/umd/react-dom.development.js`,
-        prod: `${npm}/react-dom/umd/react-dom.production.min.js`,
+        nodeModulesPath: "react-dom/umd",
+        dev: "react-dom.development.js",
+        prod: "react-dom.production.min.js",
     },
 };
 

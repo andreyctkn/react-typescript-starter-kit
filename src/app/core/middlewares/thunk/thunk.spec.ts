@@ -1,11 +1,11 @@
+import { Action } from "redux";
 import { IThunkDispatch, thunkMiddleware } from "./thunk";
-import { Action, MiddlewareAPI } from "redux";
 
 // modify unit tests from https://github.com/gaearon/redux-thunk/blob/master/test/index.js
 describe("thunk middleware", () => {
-    let doDispatch: IThunkDispatch<any>,
-        doGetState: () => any,
-        nextHandler: (next: IThunkDispatch<any>) => IThunkDispatch<any>;
+    let doDispatch: IThunkDispatch<any>;
+    let doGetState: () => any;
+    let nextHandler: (next: IThunkDispatch<any>) => IThunkDispatch<any>;
 
     beforeEach(() => {
         doDispatch = jest.fn();
@@ -13,7 +13,7 @@ describe("thunk middleware", () => {
         nextHandler = thunkMiddleware({
             dispatch: doDispatch,
             getState: doGetState,
-        } as MiddlewareAPI<any>);
+        });
     });
 
     it("must return a function to handle next", () => {
@@ -23,7 +23,7 @@ describe("thunk middleware", () => {
 
     describe("handle next", () => {
         it("must return a function to handle action", () => {
-            const actionHandler = nextHandler(null);
+            const actionHandler: IThunkDispatch<any> = nextHandler(null);
 
             expect(actionHandler).toBeInstanceOf(Function);
             expect(actionHandler.length).toEqual(1);
@@ -32,18 +32,18 @@ describe("thunk middleware", () => {
 
     describe("handle action", () => {
         it("must run the given action function with dispatch and getState", () => {
-            const actionHandler = nextHandler(null);
+            const actionHandler: IThunkDispatch<any> = nextHandler(null);
 
-            actionHandler((dispatch, getState) => {
+            actionHandler((dispatch: IThunkDispatch<any>, getState: () => any) => {
                 expect(dispatch).toEqual(doDispatch);
                 expect(getState).toEqual(doGetState);
             });
         });
 
         it("must pass action to next if not a function", () => {
-            const actionObj = { type: "@test" };
+            const actionObj: { type: string } = { type: "@test" };
 
-            const actionHandler = nextHandler((action: Action) => {
+            const actionHandler: IThunkDispatch<any> = nextHandler((action: Action) => {
                 expect(action).toEqual(actionObj);
             });
 
@@ -51,24 +51,24 @@ describe("thunk middleware", () => {
         });
 
         it("must return the return value of next if not a function", () => {
-            const expected = "redux";
-            const actionHandler = nextHandler(() => expected);
+            const expected: string = "redux";
+            const actionHandler: IThunkDispatch<any> = nextHandler(() => expected);
 
-            const outcome = actionHandler(null);
+            const outcome: Action = actionHandler(null);
             expect(outcome).toEqual(expected);
         });
 
         it("must return value as expected if a function", () => {
-            const expected = "rocks";
-            const actionHandler = nextHandler(null);
+            const expected: string = "rocks";
+            const actionHandler: IThunkDispatch<any> = nextHandler(null);
 
-            const outcome = actionHandler(() => expected);
+            const outcome: string | Action = actionHandler(() => expected);
             expect(outcome).toEqual(expected);
         });
 
         it("must be invoked synchronously if a function", () => {
-            const actionHandler = nextHandler(null);
-            let mutated = 0;
+            const actionHandler: IThunkDispatch<any> = nextHandler(null);
+            let mutated: number = 0;
 
             actionHandler(() => mutated++);
             expect(mutated).toEqual(1);

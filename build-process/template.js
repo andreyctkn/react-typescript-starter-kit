@@ -1,13 +1,14 @@
 const { compile } = require("handlebars");
-const { DIRS, isProduction } = require("./constants");
-const { logInfo, logError, readFileAsync, writeFileAsync, getHashFromLastCommit } = require("./helpers/commands");
+const { INPUTS, OUTPUTS, HASH_FOR_FILE_NAME } = require("./constants");
+const { logInfo, logError, readFileAsync, writeFileAsync } = require("./helpers/commands");
 
-readFileAsync("src/index.hbs", { encoding: "utf8" })
-    .then(data => {
+logInfo("building template...");
+
+readFileAsync(INPUTS.hbs, { encoding: "utf8" })
+    .then((data) => {
         const template = compile(data);
-        const version = getHashFromLastCommit();
-        return template({ version: isProduction ? "" : version });
+        return template({ version: HASH_FOR_FILE_NAME });
     })
-    .then(html => writeFileAsync(`${DIRS.output}/index.html`, html))
-    .then(() => logInfo("template was built"))
+    .then((html) => writeFileAsync(OUTPUTS.html, html))
+    .then(() => logInfo(`template was built: ${OUTPUTS.html}`, "green"))
     .catch(logError);

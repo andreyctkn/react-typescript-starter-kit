@@ -1,4 +1,4 @@
-const { logBuildStep } = require("./commands");
+const { logBuildStep, logInfo } = require("./commands");
 const { BUILD_TYPES } = require("../constants");
 const { BUILD_TYPE } = process.env;
 
@@ -11,5 +11,8 @@ switch (BUILD_TYPE) {
         break;
     case BUILD_TYPES.prod:
         logBuildStep("production", "minified version of js and css");
+        break;
+    default:
+        logInfo("looks like you run npm command without BUILD_TYPE, please check the README.md", "yellow");
         break;
 }

@@ -3,6 +3,6 @@
     "EditorConfig.editorconfig",
     "esbenp.prettier-vscode",
     "eg2.tslint",
-    "jpoissonnier.vscode-styled-components"
+    "shinnn.stylelint"
   ]
 }

@@ -1,9 +1,40 @@
 {
-  "extends": ["tslint:latest"],
-  "jsRules": {},
+  "extends": ["tslint:latest", "tslint-react"],
   "rules": {
+    "no-import-side-effect": true,
+    "no-magic-numbers": true,
+    "no-parameter-reassignment": true,
     "only-arrow-functions": false,
-    "no-var-requires": false,
+    "typedef": [
+      true,
+      "call-signature",
+      "arrow-call-signature",
+      "parameter",
+      "arrow-parameter",
+      "variable-declaration",
+      "property-declaration",
+      "member-variable-declaration"
+    ],
+    "no-console": [true, "log", "warn", "error"],
+    "no-dynamic-delete": true,
+    "no-floating-promises": true,
+    "no-for-in-array": true,
+    "no-inferred-empty-object-type": true,
+    "no-invalid-this": true,
+    "no-switch-case-fall-through": true,
+    "no-unbound-method": true,
+    "no-unnecessary-class": true,
+    "no-void-expression": true,
+    "restrict-plus-operands": true,
+    "use-default-type-parameter": true,
+    "indent": [true, "spaces", 4],
+    "max-line-length": [true, 120],
+    "no-require-imports": true,
+    "encoding": true,
+    "number-literal-format": true,
+    "prefer-switch": true,
+    "prefer-template": true,
+    "type-literal-delimiter": true,
     "space-before-function-paren": [
       true,
       {
@@ -11,7 +42,13 @@
         "named": "never",
         "asyncArrow": "always"
       }
-    ]
-  },
-  "rulesDirectory": []
+    ],
+    "jsx-alignment": true,
+    "jsx-no-lambda": true,
+    "jsx-no-bind": true,
+    "jsx-no-multiline-js": true,
+    "jsx-no-string-ref": true,
+    "jsx-self-close": true,
+    "jsx-wrap-multiline": true
+  }
 }

@@ -1,13 +1,17 @@
 const libsConfig = require("./libs");
-const { BUILD_TYPES, DIRS, isProduction } = require("./constants");
-const { execAsync, logInfo, getHashFromLastCommit } = require("./helpers/commands");
+const { NODE_MODULES_DIR, OUTPUTS, isProduction } = require("./constants");
+const { execAsync, logError, logInfo } = require("./helpers/commands");
 
-logInfo("concatenating libs to vendor.js");
+logInfo("concatenating libs to vendor.js...");
 
 const vendorLibs = Object.keys(libsConfig)
-    .map(lib => (isProduction ? libsConfig[lib].dev : libsConfig[lib].prod))
+    .map((lib) => {
+        const currentLib = libsConfig[lib];
+        const basePathForCurrentLib = `${NODE_MODULES_DIR}/${currentLib.nodeModulesPath}`;
+        return `${basePathForCurrentLib}/${isProduction ? currentLib.prod : currentLib.dev}`;
+    })
     .join(" ");
 
-const vendorName = `vendor${isProduction ? "" : `.${getHashFromLastCommit()}`}`;
-
-execAsync(`cat ${vendorLibs} > ${DIRS.output}/${vendorName}.js`);
+execAsync(`cat ${vendorLibs} > ${OUTPUTS.vendor}`)
+    .then(() => logInfo(`compiled: ${OUTPUTS.vendor}`, "green"))
+    .catch(logError);

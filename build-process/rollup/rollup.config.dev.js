@@ -1,17 +1,21 @@
 const replace = require("rollup-plugin-replace");
 const sourcemaps = require("rollup-plugin-sourcemaps");
-const { globals, external } = require("./rollup.helper");
 const resolve = require("rollup-plugin-node-resolve");
-const { DIRS } = require("../constants");
+const { globals, external } = require("./rollup.helper");
+const { INPUTS, OUTPUTS } = require("../constants");
 
 export default {
-    input: `${DIRS.tmp}/index.js`,
+    input: INPUTS.js,
     external,
     output: {
-        file: `${DIRS.output}/bundle.js`,
+        file: OUTPUTS.bundle,
         format: "iife",
         sourcemap: true,
         globals,
+    },
+    watch: {
+        clearScreen: false,
+        chokidar: true,
     },
     plugins: [
         replace({

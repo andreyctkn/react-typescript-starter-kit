@@ -1,5 +1,5 @@
 const chalk = require("chalk");
-const { exec, execSync } = require("child_process");
+const { exec } = require("child_process");
 const { readFile, writeFile } = require("fs");
 const { promisify } = require("util");
 
@@ -7,8 +7,8 @@ const execAsync = promisify(exec);
 const readFileAsync = promisify(readFile);
 const writeFileAsync = promisify(writeFile);
 
-function logInfo(info) {
-    console.log(chalk`{cyan ${info}} \n`);
+function logInfo(info, color = "cyan") {
+    console.log(chalk`{${color} ${info}}`);
 }
 
 function logError(error) {
@@ -16,15 +16,7 @@ function logError(error) {
 }
 
 function logBuildStep(buldStep, message) {
-    console.log(
-        `Current build step: ${chalk.red(buldStep)}\n${chalk.cyan(`This step provides ${message}`)}`
-    );
-}
-
-function getHashFromLastCommit() {
-    return execSync("git rev-parse HEAD")
-        .toString()
-        .trim();
+    console.log(`Current build step: ${chalk.red(buldStep)}\n${chalk.cyan(`This step provides ${message}`)}`);
 }
 
 module.exports = {
@@ -34,5 +26,4 @@ module.exports = {
     execAsync,
     readFileAsync,
     writeFileAsync,
-    getHashFromLastCommit,
 };
