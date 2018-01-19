@@ -17,7 +17,7 @@
     ],
     "no-console": [true, "log", "warn", "error"],
     "no-dynamic-delete": true,
-    "no-floating-promises": true,
+    "no-floating-promises": [true, "Promise"],
     "no-for-in-array": true,
     "no-inferred-empty-object-type": true,
     "no-invalid-this": true,
