@@ -5,6 +5,7 @@
     "no-magic-numbers": true,
     "no-parameter-reassignment": true,
     "only-arrow-functions": false,
+    "no-submodule-imports":false,
     "typedef": [
       true,
       "call-signature",
