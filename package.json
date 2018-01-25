@@ -51,7 +51,7 @@
     "test:coverage": "npm run test -- --coverage"
   },
   "dependencies": {
-    "@types/react": "16.0.34",
+    "@types/react": "16.0.35",
     "@types/react-dom": "16.0.3",
     "@types/react-router-dom": "4.2.3",
     "chalk": "2.3.0",
@@ -67,7 +67,7 @@
     "react-redux": "5.0.6",
     "react-router-dom": "4.2.2",
     "redux": "3.7.2",
-    "rollup": "0.54.1",
+    "rollup": "0.55.0",
     "rollup-plugin-node-resolve": "3.0.2",
     "rollup-plugin-replace": "2.0.0",
     "stylelint": "8.4.0",
@@ -77,8 +77,8 @@
     "typescript": "2.6.2"
   },
   "devDependencies": {
-    "@types/jest": "22.0.1",
-    "browser-sync": "2.23.5",
+    "@types/jest": "22.1.0",
+    "browser-sync": "2.23.6",
     "chokidar": "2.0.0",
     "express": "4.16.2",
     "jest": "22.1.4",

@@ -8,11 +8,11 @@ const app = express();
 app.use(morgan("dev"));
 app.use(express.static(DIRS.output));
 
-app.listen(SERVER_PORT, () => {
+app.listen(SERVER_PORT, () =>
     init({
         proxy: `localhost:${SERVER_PORT}`,
         open: false,
         port: UI_PORT,
         files: DIRS.output,
-    });
-});
+    })
+);
