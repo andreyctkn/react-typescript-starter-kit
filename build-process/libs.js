@@ -13,6 +13,13 @@ const vendorLibs = {
         dev: "react-dom.development.js",
         prod: "react-dom.production.min.js",
     },
+    reactRouterDOM: {
+        importName: "react-router-dom",
+        globalAlias: "ReactRouterDOM",
+        nodeModulesPath: "react-router-dom/umd",
+        dev: "react-router-dom.js",
+        prod: "react-router-dom.min.js",
+    },
 };
 
 module.exports = vendorLibs;
