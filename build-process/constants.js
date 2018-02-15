@@ -3,6 +3,7 @@ const { BUILD_TYPE, PORT } = process.env;
 
 const DIRS = {
     output: "dist/build",
+    // internal temporary folder
     tmp: "dist/_tmp",
     root: "src",
 };

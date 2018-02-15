@@ -15,7 +15,7 @@
     "yarn": ">=1.3.2"
   },
   "scripts": {
-    "clean": "rm -rf dist && mkdir -p dist/build/",
+    "clean": "node build-process/helpers/clean.js",
     "prebuild": "npm run clean && npm run notify && npm run prebuild:static",
     "prebuild:static": "node build-process/vendor.js && npm run build:html",
     "start": "BUILD_TYPE='start' npm run dev:start",
