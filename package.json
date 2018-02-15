@@ -1,14 +1,14 @@
 {
-  "name": "react-redux-ts-starter-kit",
+  "name": "react-flux-ts-starter-kit",
   "version": "1.0.0",
-  "description": "starter kit which based on rollup/es6/typescript/react/redux/scss",
-  "repository": "git+https://github.com/AndreyUtka/react-redux-ts-starter-kit.git",
+  "description": "starter kit which based on rollup/es6/typescript/react/flux/rx/scss",
+  "repository": "git+https://github.com/AndreyUtka/react-flux-ts-starter-kit.git",
   "author": "AndreyUtka <AndreyUtka@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AndreyUtka/react-redux-ts-starter-kit/issues"
+    "url": "https://github.com/AndreyUtka/react-flux-ts-starter-kit/issues"
   },
-  "homepage": "https://github.com/AndreyUtka/react-redux-ts-starter-kit#readme",
+  "homepage": "https://github.com/AndreyUtka/react-flux-ts-starter-kit#readme",
   "engines": {
     "node": ">=8.9.4",
     "npm": ">=5.6.0",
