@@ -3,6 +3,7 @@
     "allowSyntheticDefaultImports": true,
     "alwaysStrict": true,
     "experimentalDecorators": true,
+    "emitBOM": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
     "inlineSourceMap": true,
