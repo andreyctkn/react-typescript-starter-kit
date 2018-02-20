@@ -1,7 +1,7 @@
 const express = require("express");
 const morgan = require("morgan");
 const { init } = require("browser-sync").create();
-const { DIRS, SERVER_PORT, UI_PORT } = require("../build-process/constants");
+const { DIRS, SERVER_PORT, UI_PORT } = require("../scripts/constants");
 
 const app = express();
 
