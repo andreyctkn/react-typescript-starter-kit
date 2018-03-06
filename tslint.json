@@ -1,21 +1,10 @@
 {
-  "extends": ["tslint:latest", "tslint-react"],
+  "extends": ["tslint:latest", "tslint-react", "rxjs-tslint-rules"],
   "rules": {
     "no-import-side-effect": true,
-    "no-magic-numbers": true,
     "no-parameter-reassignment": true,
     "only-arrow-functions": false,
     "no-submodule-imports": false,
-    "typedef": [
-      true,
-      "call-signature",
-      "arrow-call-signature",
-      "parameter",
-      "arrow-parameter",
-      "variable-declaration",
-      "property-declaration",
-      "member-variable-declaration"
-    ],
     "no-console": [true, "log", "warn", "error"],
     "no-dynamic-delete": true,
     "no-floating-promises": [true, "Promise"],
@@ -51,6 +40,11 @@
     "jsx-no-multiline-js": true,
     "jsx-no-string-ref": true,
     "jsx-self-close": true,
-    "jsx-wrap-multiline": true
+    "jsx-wrap-multiline": true,
+    "rxjs-no-add": true,
+    "rxjs-deep-operators": true,
+    "rxjs-no-ignored-subscribe": true,
+    "rxjs-no-patched": true,
+    "rxjs-no-wholesale": true
   }
 }

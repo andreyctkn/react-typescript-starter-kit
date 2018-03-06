@@ -1,6 +1,7 @@
 const { rollup } = require("rollup");
 const replace = require("rollup-plugin-replace");
 const resolve = require("rollup-plugin-node-resolve");
+const commonjs = require("rollup-plugin-commonjs");
 const { compile } = require("google-closure-compiler-js");
 const { globals, external } = require("./rollup.helper");
 const { logError, logInfo, writeFileAsync } = require("../helpers/commands");
@@ -15,7 +16,8 @@ rollup({
         replace({
             "process.env.NODE_ENV": JSON.stringify("production"),
         }),
-        resolve({ jsnext: true, modulesOnly: true }),
+        commonjs(),
+        resolve(),
     ],
 })
     .then((bundle) => bundle.generate({ format: "iife", globals }))

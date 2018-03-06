@@ -1,6 +1,7 @@
 const replace = require("rollup-plugin-replace");
 const sourcemaps = require("rollup-plugin-sourcemaps");
 const resolve = require("rollup-plugin-node-resolve");
+const commonjs = require("rollup-plugin-commonjs");
 const { globals, external } = require("./rollup.helper");
 const { INPUTS, OUTPUTS } = require("../constants");
 
@@ -21,7 +22,8 @@ export default {
         replace({
             "process.env.NODE_ENV": JSON.stringify("development"),
         }),
-        resolve({ jsnext: true, modulesOnly: true }),
+        commonjs(),
+        resolve(),
         sourcemaps(),
     ],
 };
