@@ -47,7 +47,6 @@
     "@types/react-router-dom": "4.2.5",
     "@types/redux-actions": "2.2.4",
     "chalk": "2.3.2",
-    "dotenv": "5.0.1",
     "emotion": "9.1.0",
     "handlebars": "4.0.11",
     "immutable": "4.0.0-rc.9",
