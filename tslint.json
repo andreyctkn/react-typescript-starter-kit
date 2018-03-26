@@ -1,7 +1,9 @@
 {
   "extends": ["tslint:latest", "tslint-react", "rxjs-tslint-rules"],
   "rules": {
-    "no-import-side-effect": true,
+    "trailing-comma": true,
+    "semicolon": [true, "ignore-bound-class-methods"],
+    "object-literal-sort-keys": false,
     "no-parameter-reassignment": true,
     "only-arrow-functions": false,
     "no-submodule-imports": false,
@@ -9,11 +11,12 @@
     "no-dynamic-delete": true,
     "no-floating-promises": [true, "Promise"],
     "no-for-in-array": true,
-    "no-inferred-empty-object-type": true,
     "no-invalid-this": true,
     "no-switch-case-fall-through": true,
     "no-unbound-method": true,
     "no-unnecessary-class": true,
+    "no-unused-expression": [true, "allow-tagged-template"],
+    "no-import-side-effect": [true, { "ignore-module": "(Normalize)" }],
     "no-void-expression": true,
     "restrict-plus-operands": true,
     "use-default-type-parameter": true,
@@ -22,6 +25,7 @@
     "no-require-imports": true,
     "encoding": true,
     "number-literal-format": true,
+    "interface-name": false,
     "prefer-switch": true,
     "prefer-template": true,
     "type-literal-delimiter": true,
@@ -33,7 +37,7 @@
         "asyncArrow": "always"
       }
     ],
-    "no-implicit-dependencies": [true, "dev"],
+    "no-implicit-dependencies": false,
     "jsx-alignment": true,
     "jsx-no-lambda": true,
     "jsx-no-bind": true,

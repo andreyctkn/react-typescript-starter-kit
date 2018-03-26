@@ -20,6 +20,18 @@ const vendorLibs = {
         dev: "react-router-dom.js",
         prod: "react-router-dom.min.js",
     },
+    immutable: {
+        importName: "immutable",
+        globalAlias: "Immutable",
+        nodeModulesPath: "immutable/dist",
+        dev: "immutable.js",
+        prod: "immutable.min.js",
+    },
+    moment: {
+        importName: "moment",
+        nodeModulesPath: "moment/min",
+        prod: "moment.min.js",
+    },
 };
 
 module.exports = vendorLibs;

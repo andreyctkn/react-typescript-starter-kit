@@ -1,14 +1,14 @@
 sudo: false
 language: node_js
-node_js: "9.4.0"
+node_js: "9.9.0"
+before_install:
+  - npm i -g npm@latest
 cache:
-  yarn: true
   directories:
     - node_modules
 script:
-  - yarn
-  - yarn build-prod
-  - yarn test
+  - npm run build
+  - npm run test:coverage
 notifications:
   on_failure: change # always|never
   on_success: never

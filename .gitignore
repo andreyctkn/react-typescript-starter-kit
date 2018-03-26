@@ -1,8 +1,6 @@
 /node_modules
 /dist
 /coverage
-/package-lock.json
 /yarn-error.log
 /.idea
-/.eyeglass_cache
 !/.vscode

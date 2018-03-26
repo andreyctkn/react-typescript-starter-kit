@@ -25,7 +25,6 @@ const HASH_FOR_FILE_NAME = `${isProduction ? `.${HASH_FROM_LAST_COMMIT}` : ""}`;
 
 const INPUTS = {
     js: `${DIRS.tmp}/index.js`,
-    scss: `${DIRS.root}/index.scss`,
     hbs: `${DIRS.root}/index.hbs`,
 };
 
@@ -35,7 +34,6 @@ const OUTPUTS = {
     vendor: `${DIRS.output}/vendor${HASH_FOR_FILE_NAME}.js`,
     // bundle contains only app logic
     bundle: `${DIRS.output}/bundle${HASH_FOR_FILE_NAME}.js`,
-    styles: `${DIRS.output}/styles${HASH_FOR_FILE_NAME}.css`,
 };
 
 module.exports = {

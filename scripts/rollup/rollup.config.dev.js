@@ -3,7 +3,7 @@ const sourcemaps = require("rollup-plugin-sourcemaps");
 const resolve = require("rollup-plugin-node-resolve");
 const commonjs = require("rollup-plugin-commonjs");
 const { globals, external } = require("./rollup.helper");
-const { INPUTS, OUTPUTS } = require("../constants");
+const { INPUTS, OUTPUTS, DIRS } = require("../constants");
 
 export default {
     input: INPUTS.js,
@@ -17,13 +17,14 @@ export default {
     watch: {
         clearScreen: false,
         chokidar: true,
+        include: `${DIRS.tmp}/**`,
     },
     plugins: [
         replace({
             "process.env.NODE_ENV": JSON.stringify("development"),
         }),
+        resolve({ jsnext: true }),
         commonjs(),
-        resolve(),
         sourcemaps(),
     ],
 };

@@ -16,12 +16,21 @@ function logError(error) {
 }
 
 function logBuildStep(buldStep, message) {
-    console.log(`Current build step: ${chalk.red(buldStep)}\n${chalk.cyan(`This step provides ${message}`)}`);
+    console.log(
+        `${chalk.yellow("Current build step")}: ${chalk.red.bold(buldStep)}\n${chalk.cyan(
+            `This step provides ${message}`
+        )}`
+    );
+}
+
+function logFileInfo(file) {
+    return execAsync(`du -h ${file}`).then(({ stdout }) => logInfo(`compiled:\nsize: ${stdout}`, "green"));
 }
 
 module.exports = {
     logInfo,
     logError,
+    logFileInfo,
     logBuildStep,
     execAsync,
     readFileAsync,

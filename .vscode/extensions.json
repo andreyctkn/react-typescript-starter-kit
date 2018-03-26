@@ -3,8 +3,8 @@
     "EditorConfig.editorconfig",
     "esbenp.prettier-vscode",
     "eg2.tslint",
-    "shinnn.stylelint",
     "Orta.vscode-jest",
     "christian-kohler.path-intellisense",
+    "jpoissonnier.vscode-styled-components"
   ]
 }
